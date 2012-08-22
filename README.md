@@ -1,6 +1,10 @@
+http://github.com/oma/table-fixed-header
+
 # Freeze table header at top of the page when scrolling.
 
 jQuery Plugin for 'freezing' the table header when the page is scrolled and the header would otherwise disappear.
+
+See LIVE example here http://rubynor.com/table-fixed-header/example.html
 
 For solution to enable independent scrolling of table *body* only, this is not it. You might want to look at chromatable or other. To be honest, we tried those too, but they didn't handle big tables with colspans and rowspans very well.
 
