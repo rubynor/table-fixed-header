@@ -3,12 +3,17 @@ table .header-fixed {
   top: 40px;
   /*left: 0;*/
   /*right: 0;*/
-  background-color: white;
   z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
   border-bottom: 1px solid #d5d5d5;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
+}
+thead {
+  background-color: #eaeaea;
+}
+tbody {
+  background-color: #fcfcfc;
 }
 
 #mynav {
