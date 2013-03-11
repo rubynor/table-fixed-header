@@ -17,8 +17,10 @@ $.fn.fixedHeader = function (options) {
 
   function processScroll() {
     if (!o.is(':visible')) return;
-    if ($('thead.header-copy').size())
-    var i, scrollTop = $win.scrollTop();
+	if ($('thead.header-copy').size()) {
+		$('thead.header-copy').width($('thead.header').width());
+		var i, scrollTop = $win.scrollTop();
+	}
     var t = $head.length && $head.offset().top - config.topOffset;
     if (!isFixed && headTop != t) { headTop = t; }
     if (scrollTop >= headTop && !isFixed) {
