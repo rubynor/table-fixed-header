@@ -26,7 +26,7 @@ include the javascript or coffeescript file in your path.
 
 add the css class 'table-fixed-header' to your table. Add the class 'header' to your thead.
 
-    %table.table-fixed.header
+    %table.table-fixed-header
       %thead.header
         %tr
           %th header1
