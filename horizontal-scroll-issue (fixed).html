@@ -1,0 +1,329 @@
+<html>
+  <head>
+    <title>Horizontal Scroll Issue</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css' rel='stylesheet' />
+    <script src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+    <!-- CSS and JS for table fixed header -->
+    <link href='table-fixed-header.css' rel='stylesheet' />
+	<script type="text/javascript">
+(function($) {
+
+$.fn.fixedHeader = function (options) {
+ var config = {
+   topOffset: 40
+   //bgColor: 'white'
+ };
+ if (options){ $.extend(config, options); }
+
+ return this.each( function() {
+  var o = $(this);
+
+  var $win = $(window)
+    , $head = $('thead.header', o)
+    , isFixed = 0;
+  var headTop = $head.length && $head.offset().top - config.topOffset;
+
+  function processScroll() {
+    if (!o.is(':visible')) return;
+	if ($('thead.header-copy').size()) {
+		$('thead.header-copy').width($('thead.header').width());
+		var i, scrollTop = $win.scrollTop();
+	}
+    var t = $head.length && $head.offset().top - config.topOffset;
+    if (!isFixed && headTop != t) { headTop = t; }
+    if (scrollTop >= headTop && !isFixed) {
+      isFixed = 1;
+    } else if (scrollTop <= headTop && isFixed) {
+      isFixed = 0;
+    }
+    isFixed ? $('thead.header-copy', o).offset({ left: $head.offset().left }).removeClass('hide')
+            : $('thead.header-copy', o).addClass('hide');
+  }
+  $win.on('scroll', processScroll);
+
+  // hack sad times - holdover until rewrite for 2.1
+  $head.on('click', function () {
+    if (!isFixed) setTimeout(function () {  $win.scrollTop($win.scrollTop() - 47) }, 10);
+  })
+
+  $head.clone().removeClass('header').addClass('header-copy header-fixed').appendTo(o);
+  var header_width = $head.width();
+  o.find('thead.header-copy').width(header_width);
+  o.find('thead.header > tr:first > th').each(function (i, h){
+    var w = $(h).width();
+    o.find('thead.header-copy> tr > th:eq('+i+')').width(w)
+  });
+  $head.css({ margin:'0 auto',
+              width: o.width(),
+             'background-color':config.bgColor });
+  processScroll();
+ });
+};
+
+})(jQuery);
+	</script>
+    <script src='duplicate_rows.js'></script>
+  </head>
+  <body>
+    <div class='container'>
+	  <h2 id='mynav'>| my navigation bar | my navigation bar | my navigation bar | my navigation bar</h2>
+      <h1>Table Fixed Header</h1>
+      <table class='table table-bordered table-fixed-header'>
+        <thead class='header'>
+          <tr>
+            <th colspan='1' rowspan='1'>
+              Sub1
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub2
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub3
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub4
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub5
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub6
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub7
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub8
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub9
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub10
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub11
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub12
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub13
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub14
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub15
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub16
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub17
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub18
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub19
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub20
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub1
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub2
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub3
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub4
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub5
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub6
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub7
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub8
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub9
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub10
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub11
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub12
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub13
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub14
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub15
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub16
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub17
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub18
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub19
+            </th>
+            <th colspan='1' rowspan='1'>
+              Sub20
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Val1
+            </td>
+            <td>
+              Val2
+            </td>
+            <td>
+              Val3
+            </td>
+            <td>
+              Val4
+            </td>
+            <td>
+              Val5
+            </td>
+            <td>
+              Val6
+            </td>
+            <td>
+              Val7
+            </td>
+            <td>
+              Val8
+            </td>
+            <td>
+              Val9
+            </td>
+            <td>
+              Val10
+            </td>
+            <td>
+              Val11
+            </td>
+            <td>
+              Val12
+            </td>
+            <td>
+              Val13
+            </td>
+            <td>
+              Val14
+            </td>
+            <td>
+              Val15
+            </td>
+            <td>
+              Val16
+            </td>
+            <td>
+              Val17
+            </td>
+            <td>
+              Val18
+            </td>
+            <td>
+              Val19
+            </td>
+            <td>
+              Val20
+            </td>
+            <td>
+              Val1
+            </td>
+            <td>
+              Val2
+            </td>
+            <td>
+              Val3
+            </td>
+            <td>
+              Val4
+            </td>
+            <td>
+              Val5
+            </td>
+            <td>
+              Val6
+            </td>
+            <td>
+              Val7
+            </td>
+            <td>
+              Val8
+            </td>
+            <td>
+              Val9
+            </td>
+            <td>
+              Val10
+            </td>
+            <td>
+              Val11
+            </td>
+            <td>
+              Val12
+            </td>
+            <td>
+              Val13
+            </td>
+            <td>
+              Val14
+            </td>
+            <td>
+              Val15
+            </td>
+            <td>
+              Val16
+            </td>
+            <td>
+              Val17
+            </td>
+            <td>
+              Val18
+            </td>
+            <td>
+              Val19
+            </td>
+            <td>
+              Val20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script language='javascript' type='text/javascript'>
+      $(document).ready(function(){
+		$('.table-fixed-header').fixedHeader();
+      });
+    </script>
+  </body>
+</html>
