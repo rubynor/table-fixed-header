@@ -3,8 +3,8 @@
   %head
     %title Table Fixed Header
     %meta{content: "text/html; charset=UTF-8", :"http-equiv" => "Content-Type"}
-    %link{:href => "http://twitter.github.com/bootstrap/assets/css/bootstrap.css", :rel => "stylesheet"}
-    %script{:src => "http://code.jquery.com/jquery-1.7.2.min.js"}
+    %script{:src => "jquery-1.7.2.min.js"}
+    %link{:href => "bootstrap-2.3.2.css", :rel => "stylesheet"}
     / CSS and JS for table fixed header
     %link{:href => "table-fixed-header.css", :rel => "stylesheet"}
     %script{:src => "table-fixed-header.js"}
@@ -15,7 +15,7 @@
     .container
       %h2#mynav | my navigation bar | my navigation bar | my navigation bar | my navigation bar |
       %h1 Table Fixed Header
-      %table.table.table-bordered.table-fixed-header
+      %table.table.table-bordered.table-striped.table-fixed-header
         %thead.header
           %tr
             %th{:colspan => 1, :rowspan => 2}

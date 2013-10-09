@@ -1,10 +1,11 @@
 <html>
   <head>
     <title>Table Fixed Header</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <script src='jquery-1.7.2.min.js'></script>
+    <link href='bootstrap-2.3.2.css' rel='stylesheet'>
     <!-- CSS and JS for table fixed header -->
-    <link href='table-fixed-header.css' rel='stylesheet' />
+    <link href='table-fixed-header.css' rel='stylesheet'>
     <script src='table-fixed-header.js'></script>
     <script src='duplicate_rows.js'></script>
   </head>
@@ -12,14 +13,14 @@
     <div class='container'>
       <h2 id='mynav'>| my navigation bar | my navigation bar | my navigation bar | my navigation bar</h2>
       <h1>Table Fixed Header</h1>
-      <table class='table table-bordered table-fixed-header'>
+      <table class='table table-bordered table-striped table-fixed-header'>
         <thead class='header'>
           <tr>
             <th colspan='1' rowspan='2'>
               A title
             </th>
             <th colspan='3' rowspan='1'>
-              A big title
+              A multicolumn title
             </th>
             <th colspan='1' rowspan='2'>
               Comment
