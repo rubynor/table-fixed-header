@@ -28,8 +28,8 @@ $.fn.fixedHeader = function (options) {
     } else if (scrollTop <= headTop && isFixed) {
       isFixed = 0;
     }
-    isFixed ? $('thead.header-copy', o).offset({ left: $head.offset().left }).removeClass('hide')
-            : $('thead.header-copy', o).addClass('hide');
+    isFixed ? $('thead.header-copy', o).offset({ left: $head.offset().left }).show()
+            : $('thead.header-copy', o).hide();
   }
   $win.on('scroll', processScroll);
 
