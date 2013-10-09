@@ -17,10 +17,10 @@ $.fn.fixedHeader = function (options) {
 
   function processScroll() {
     if (!o.is(':visible')) return;
-	if ($('thead.header-copy').size()) {
-		$('thead.header-copy').width($('thead.header').width());
-		var i, scrollTop = $win.scrollTop();
-	}
+    if ($('thead.header-copy').size()) {
+      $('thead.header-copy').width($head.width());
+      var i, scrollTop = $win.scrollTop();
+    }
     var t = $head.length && $head.offset().top - config.topOffset;
     if (!isFixed && headTop != t) { headTop = t; }
     if (scrollTop >= headTop && !isFixed) {
@@ -39,9 +39,9 @@ $.fn.fixedHeader = function (options) {
   })
 
   $head.clone().removeClass('header').addClass('header-copy header-fixed').appendTo(o);
-  var header_width = $head.width();
-  o.find('thead.header-copy').width(header_width);
-  o.find('thead.header > tr:first > th').each(function (i, h){
+  o.find('thead.header-copy').width($head.width());
+
+  o.find('thead.header > tr > th').each(function (i, h) {
     var w = $(h).width();
     o.find('thead.header-copy> tr > th:eq('+i+')').width(w)
   });
