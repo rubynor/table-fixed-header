@@ -38,7 +38,7 @@ $.fn.fixedHeader = function (options) {
     if (!isFixed) setTimeout(function () {  $win.scrollTop($win.scrollTop() - 47) }, 10);
   })
 
-  $head.clone().removeClass('header').addClass('header-copy header-fixed').appendTo(o);
+  $head.clone().removeClass('header').addClass('header-copy header-fixed').css({'position': 'fixed', 'top': config['topOffset']}).appendTo(o);
   o.find('thead.header-copy').width($head.width());
 
   o.find('thead.header > tr > th').each(function (i, h) {
