@@ -39,7 +39,6 @@ add the css class 'table-fixed-header' to your table. Add the class 'header' to 
           %td val3
           %td val4
 
-
 Trigger the header freeze with this:
 
     $('.table-fixed-header').fixedHeader()
@@ -49,3 +48,10 @@ Trigger the header freeze with this:
 
 Thanks to https://github.com/i-scorpion for the initial solution https://gist.github.com/2948136
 Thanks to https://github.com/alexrolls for the skype share screen sessions and discussions
+
+
+#License
+
+MIT license http://opensource.org/licenses/MIT
+
+please keep contributing by sharing code :-)
