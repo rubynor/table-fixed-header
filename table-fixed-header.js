@@ -19,6 +19,9 @@ $.fn.fixedHeader = function (options) {
     if (!o.is(':visible')) return;
     if ($('thead.header-copy').size()) {
       $('thead.header-copy').width($head.width());
+      $('thead.header-copy th').each(function(i, th) {
+        $(th).width($($head.find('th')[i]).width());
+      });
       var i, scrollTop = $win.scrollTop();
     }
     var t = $head.length && $head.offset().top - config.topOffset;
