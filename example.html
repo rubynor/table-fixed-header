@@ -7,6 +7,7 @@
     <!-- CSS and JS for table fixed header -->
     <link href='table-fixed-header.css' rel='stylesheet'>
     <script src='table-fixed-header.js'></script>
+    <script src='bottom-sticker.js'></script>
     <script src='duplicate_rows.js'></script>
   </head>
   <body>
@@ -86,10 +87,16 @@
           </tr>
         </tbody>
       </table>
+      
+      <div class="form-actions" id="bottom-sticker">
+	      <input id="btnSubmit" class="btn btn-primary" type="submit" value="Save"/>
+	      <input id="btnCancel" class="btn" type="button" value="Back" onclick="history.go(-1)"/>
+	  </div>
     </div>
     <script language='javascript' type='text/javascript'>
       $(document).ready(function(){
-      $('.table-fixed-header').fixedHeader();
+        $('.table-fixed-header').fixedHeader();
+        $("#bottom-sticker").bottomSticker();
       });
     </script>
   </body>
