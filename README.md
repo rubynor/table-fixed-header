@@ -38,11 +38,12 @@ add the css class 'table-fixed-header' to your table. Add the class 'header' to 
         %tr
           %td val3
           %td val4
+    %div.bottom-sticker
 
 Trigger the header freeze with this:
 
     $('.table-fixed-header').fixedHeader()
-
+    $('.bottom-sticker').bottomSticker()
 
 #Credits
 
